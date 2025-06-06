@@ -1,0 +1,92 @@
+{
+  "Mysuru": {
+    "pubs": [
+      {
+        "name": "Myst Lounge Bar",
+        "location": "Radisson Blu Plaza Hotel, MG Road",
+        "rating": 5.0,
+        "description": "Offers a range of cocktails, fine spirits, and Mediterranean cuisines with live music nights.",
+        "features": ["Serves Alcohol", "Outdoor Seating", "Live Music"]
+      },
+      {
+        "name": "Beer Garden Restaurant",
+        "location": "Parklane Hotel, Sri Harsha Road",
+        "rating": 4.1,
+        "description": "Known for its fresh beer, great food, and open-air seating.",
+        "features": ["Serves Alcohol", "Outdoor Seating", "Live Music"]
+      },
+      {
+        "name": "Pelican Pub & Grub House",
+        "location": "Vinoba Road, Hunsur Road",
+        "rating": 3.5,
+        "description": "A casual pub offering a variety of drinks and Indian cuisine.",
+        "features": ["Serves Alcohol", "Outdoor Seating"]
+      }
+    ],
+    "restaurants": [
+      {
+        "name": "Fresh Catch Seafood Restaurant",
+        "rating": 4.3,
+        "description": "Specializes in fresh seafood with a variety of Indian preparations.",
+        "features": ["Seafood", "Vegetarian Friendly"]
+      },
+      {
+        "name": "Lalitha Mahal Palace Hotel",
+        "rating": 3.5,
+        "description": "Offers a blend of Indian and international cuisines in a royal setting.",
+        "features": ["Fine Dining", "Vegetarian Friendly"]
+      },
+      {
+        "name": "Poojari Fish Land",
+        "rating": 3.6,
+        "description": "Known for its authentic fish curry and dosa.",
+        "features": ["Seafood", "Vegetarian Friendly"]
+      }
+    ]
+  },
+  "Bengaluru": {
+    "pubs": [
+      {
+        "name": "Kling Brewery",
+        "location": "Koramangala",
+        "rating": 4.9,
+        "description": "A brewery offering a variety of craft beers and a lively atmosphere.",
+        "features": ["Serves Alcohol", "Outdoor Seating", "Live Music"]
+      },
+      {
+        "name": "Hype",
+        "location": "Indiranagar",
+        "rating": 4.8,
+        "description": "A trendy pub known for its cocktails and DJ nights.",
+        "features": ["Serves Alcohol", "Outdoor Seating", "Live Music"]
+      },
+      {
+        "name": "The 13th Floor",
+        "location": "MG Road",
+        "rating": 4.5,
+        "description": "Offers panoramic views of the city with a selection of drinks.",
+        "features": ["Serves Alcohol", "Outdoor Seating"]
+      }
+    ],
+    "restaurants": [
+      {
+        "name": "Karavalli @ Taj",
+        "rating": 4.8,
+        "description": "Specializes in coastal Indian cuisine with a focus on seafood.",
+        "features": ["Seafood", "Fine Dining"]
+      },
+      {
+        "name": "Time Traveller",
+        "rating": 4.9,
+        "description": "Offers a fusion of Indian and international cuisines in a contemporary setting.",
+        "features": ["Vegetarian Friendly", "Fine Dining"]
+      },
+      {
+        "name": "Nook",
+        "rating": 4.5,
+        "description": "A casual dining restaurant offering a variety of global cuisines.",
+        "features": ["Vegetarian Friendly", "Casual Dining"]
+      }
+    ]
+  }
+}

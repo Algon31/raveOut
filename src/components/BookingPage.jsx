@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-export default function BookingPage() {
+export default function BookingPage({ user }) {
   const [formData, setFormData] = useState({
-    name: "",
+    name: user?.username || "",
     phone: "",
     guests: 1,
     date: "",
@@ -83,7 +83,10 @@ export default function BookingPage() {
           <p className="text-lg mb-6 text-gray-300">
             You'll receive an SMS shortly confirming your booking.
           </p>
-          <a href="/" className="inline-block bg-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-700 font-semibold text-white">
+          <a
+            href="/"
+            className="inline-block bg-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-700 font-semibold text-white"
+          >
             Go to Home
           </a>
         </div>
