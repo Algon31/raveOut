@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
-import HomePage from './components/Homepage'
-import Hello from './components/Hello'
-import ClubDetails from './components/ClubDetails';
-import BookingPage from './components/BookingPage';
+import HomePage from './Components/Homepage'
+import Hello from './Components/Hello'
+import ClubDetails from './Components/ClubDetails';
+import BookingPage from './Components/BookingPage';
 
 function App() {
   const [count, setCount] = useState(0)
