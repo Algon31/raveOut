@@ -7,6 +7,7 @@ import Hello from "./components/Hello";
 import ClubDetails from "./components/ClubDetails";
 import BookingPage from "./components/BookingPage";
 import AuthPage from "./components/AuthPage";
+import NotFound from "./components/NotFound";
 
 function App() {
   const [user, setUserState] = useState(null);
@@ -58,6 +59,7 @@ function App() {
           />
           <Route path="/hello" element={<Hello />} />
           <Route path="/booking" element={<BookingPage user={user} />} />
+          <Route path="*" element={<NotFound />} />
           <Route path="/details/:type/:city/:index" element={<ClubDetails />} />
           <Route
             path="/auth"
