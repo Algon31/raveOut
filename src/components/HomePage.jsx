@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import data from "../data/places.json";
 
-const itemImage = "../assets/images/mpro.jpg";
+import itemImage  from "../assets/images/mpro.jpg";
 
 function renderStars(rating) {
   const stars = [];

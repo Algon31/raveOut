@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { auth, googleProvider } from "../firebase";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
 
 export default function AuthPage({ setUser }) {
   const [isLogin, setIsLogin] = useState(true);
@@ -12,35 +18,75 @@ export default function AuthPage({ setUser }) {
     phone: "",
     city: "Mysuru",
     email: "",
-    password: ""
+    password: "",
   });
 
   const navigate = useNavigate();
 
-  const handleAuth = (e) => {
+  const handleAuth = async (e) => {
     e.preventDefault();
-
     if (!isLogin && parseInt(form.age) < 15) {
       alert("Only users above 15 years are allowed.");
       return;
     }
 
-    const imageUrl = form.gender === "male"
-      ? "https://i.pravatar.cc/150?img=12"
-      : "https://i.pravatar.cc/150?img=47";
+    try {
+      let userCredential;
+      if (isLogin) {
+        userCredential = await signInWithEmailAndPassword(
+          auth,
+          form.email,
+          form.password
+        );
+      } else {
+        userCredential = await createUserWithEmailAndPassword(
+          auth,
+          form.email,
+          form.password
+        );
+      }
 
-    const userObj = {
-      username: isLogin
-        ? form.email.split("@")[0]
-        : form.username || form.email.split("@")[0],
-      email: form.email,
-      imageUrl,
-      city: form.city,
-      gender: form.gender
-    };
+      const firebaseUser = userCredential.user;
+      const imageUrl =
+        form.gender === "male"
+          ? "https://i.pravatar.cc/150?img=12"
+          : "https://i.pravatar.cc/150?img=47";
 
-    setUser(userObj);
-    navigate("/");
+      const userObj = {
+        username: isLogin
+          ? firebaseUser.email.split("@")[0]
+          : form.username || firebaseUser.email.split("@")[0],
+        email: firebaseUser.email,
+        imageUrl,
+        city: form.city,
+        gender: form.gender,
+      };
+
+      setUser(userObj);
+      navigate("/");
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+
+      const userObj = {
+        username: user.displayName || user.email.split("@")[0],
+        email: user.email,
+        imageUrl: user.photoURL,
+        city: "Mysuru",
+        gender: "unknown",
+      };
+
+      setUser(userObj);
+      navigate("/");
+    } catch (error) {
+      alert("Google login failed: " + error.message);
+    }
   };
 
   const handleChange = (e) => {
@@ -163,6 +209,14 @@ export default function AuthPage({ setUser }) {
             className="w-full bg-indigo-600 hover:bg-indigo-700 py-2 rounded font-semibold"
           >
             {isLogin ? "Login" : "Sign Up"}
+          </button>
+
+          <button
+            type="button"
+            onClick={handleGoogleLogin}
+            className="w-full bg-red-600 hover:bg-red-700 py-2 rounded font-semibold mt-2"
+          >
+            Continue with Google
           </button>
         </form>
 
