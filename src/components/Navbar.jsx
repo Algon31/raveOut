@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-export default function Navbar({ user, setUser }) {
+export default function Navbar({ user, setUser, selectedCity, setSelectedCity }) {
   const [showProfileMenu, setShowProfileMenu] = useState(false);
 
   const toggleProfileMenu = () => setShowProfileMenu((v) => !v);
   const closeProfileMenu = () => setShowProfileMenu(false);
+
+  // Load city from sessionStorage if available
+  useEffect(() => {
+    const storedCity = sessionStorage.getItem("raveoutCity");
+    if (storedCity) setSelectedCity(storedCity);
+  }, [setSelectedCity]);
+
+  // Save selected city to sessionStorage when it changes
+  const handleCityChange = (e) => {
+    const newCity = e.target.value;
+    setSelectedCity(newCity);
+    sessionStorage.setItem("raveoutCity", newCity);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-gray-900 text-white shadow-md z-50">
@@ -19,6 +32,15 @@ export default function Navbar({ user, setUser }) {
         </NavLink>
 
         <div className="flex items-center space-x-6 relative">
+          {/* City Dropdown */}
+          <select
+            value={selectedCity}
+            onChange={handleCityChange}
+            className="bg-gray-800 text-white p-2 rounded-md border border-gray-700"
+          >
+            <option value="Bengaluru">Bengaluru</option>
+            <option value="Mysuru">Mysuru</option>
+          </select>
 
           {!user ? (
             <>
@@ -30,15 +52,6 @@ export default function Navbar({ user, setUser }) {
                 onClick={closeProfileMenu}
               >
                 Login
-              </NavLink>
-              <NavLink
-                to="/auth"
-                className={({ isActive }) =>
-                  isActive ? "text-indigo-400 font-semibold" : "hover:text-indigo-300"
-                }
-                onClick={closeProfileMenu}
-              >
-                Sign Up
               </NavLink>
             </>
           ) : (
@@ -69,6 +82,7 @@ export default function Navbar({ user, setUser }) {
                       className="hover:text-red-400 text-red-300"
                       onClick={() => {
                         setUser(null);
+                        sessionStorage.removeItem("raveoutUser");
                         closeProfileMenu();
                       }}
                     >

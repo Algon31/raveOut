@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function BookingPage({ user }) {
   const [formData, setFormData] = useState({
@@ -10,6 +10,17 @@ export default function BookingPage({ user }) {
 
   const [submitted, setSubmitted] = useState(false);
 
+  // Load user from sessionStorage if not passed from props
+  useEffect(() => {
+    if (!user && !formData.name) {
+      const stored = sessionStorage.getItem("raveoutUser");
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        setFormData((prev) => ({ ...prev, name: parsed.username }));
+      }
+    }
+  }, [user]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -18,6 +29,7 @@ export default function BookingPage({ user }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -45,6 +57,7 @@ export default function BookingPage({ user }) {
             value={formData.phone}
             onChange={handleChange}
             type="tel"
+            pattern="[0-9]{10}"
             required
             className="w-full mb-4 p-2 rounded text-black"
           />

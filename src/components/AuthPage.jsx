@@ -63,6 +63,7 @@ export default function AuthPage({ setUser }) {
       };
 
       setUser(userObj);
+      sessionStorage.setItem("raveoutUser", JSON.stringify(userObj));
       navigate("/");
     } catch (error) {
       alert(error.message);

@@ -1,31 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import data from "../data/places.json";
+import defaultImage from "../assets/images/mpro.jpg";
 
-export default function ClubDetails({ user, setUser }) {
+export default function ClubDetails({ user: passedUser, setUser }) {
   const { type, city, index } = useParams();
   const navigate = useNavigate();
+
+  const [user, setLocalUser] = useState(passedUser);
+  useEffect(() => {
+    if (!passedUser) {
+      const stored = sessionStorage.getItem("raveoutUser");
+      if (stored) setLocalUser(JSON.parse(stored));
+    }
+  }, [passedUser]);
 
   const itemList = data[city]?.[type];
   const item = itemList ? itemList[parseInt(index)] : null;
 
   const [currentImage, setCurrentImage] = useState(0);
-  const [showBookingForm, setShowBookingForm] = useState(false);
-  const [bookingData, setBookingData] = useState({
-    name: user?.username || "",
-    people: 1,
-    date: "",
-  });
-
-  if (!item) {
-    return (
-      <div className="min-h-screen bg-gray-900 text-white p-6">
-        <p className="text-center text-red-500">Item not found</p>
-      </div>
-    );
-  }
-
-  const images = item.images && item.images.length > 0 ? item.images : ["../assets/images/mpro.jpg"];
+  const images =
+    item?.images && item.images.length > 0 ? item.images : [defaultImage];
 
   const prevImage = () => {
     setCurrentImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -34,19 +29,13 @@ export default function ClubDetails({ user, setUser }) {
     setCurrentImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
-  const handleBookingChange = (e) => {
-    const { name, value } = e.target;
-    setBookingData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleBookingSubmit = (e) => {
-    e.preventDefault();
-    alert(
-      `Booking confirmed for ${bookingData.name} on ${bookingData.date} for ${bookingData.people} people.`
+  if (!item) {
+    return (
+      <div className="min-h-screen bg-gray-900 text-white p-6">
+        <p className="text-center text-red-500">Item not found</p>
+      </div>
     );
-    setShowBookingForm(false);
-    navigate("/");
-  };
+  }
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -145,7 +134,7 @@ export default function ClubDetails({ user, setUser }) {
           )}
         </section>
 
-        {/* Booking */}
+        {/* Booking Button */}
         <section>
           <button
             className="bg-indigo-600 px-6 py-3 rounded-lg text-lg font-semibold hover:bg-indigo-700"
@@ -153,7 +142,7 @@ export default function ClubDetails({ user, setUser }) {
           >
             Book Now
           </button>
-          </section>
+        </section>
       </div>
     </div>
   );

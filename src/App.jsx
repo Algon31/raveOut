@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import "./App.css";
@@ -9,14 +9,53 @@ import BookingPage from "./components/BookingPage";
 import AuthPage from "./components/AuthPage";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUserState] = useState(null);
+  const [selectedCity, setSelectedCityState] = useState("Bengaluru");
+
+  // Load user and city from sessionStorage on first load
+  useEffect(() => {
+    const storedUser = sessionStorage.getItem("raveoutUser");
+    const storedCity = sessionStorage.getItem("raveoutCity");
+
+    if (storedUser) setUserState(JSON.parse(storedUser));
+    if (storedCity) setSelectedCityState(storedCity);
+  }, []);
+
+  // Setters that sync with sessionStorage
+  const setUser = (userData) => {
+    if (userData) {
+      sessionStorage.setItem("raveoutUser", JSON.stringify(userData));
+    } else {
+      sessionStorage.removeItem("raveoutUser");
+    }
+    setUserState(userData);
+  };
+
+  const setSelectedCity = (city) => {
+    sessionStorage.setItem("raveoutCity", city);
+    setSelectedCityState(city);
+  };
 
   return (
     <>
-      <Navbar user={user} setUser={setUser} />
+      <Navbar
+        user={user}
+        setUser={setUser}
+        selectedCity={selectedCity}
+        setSelectedCity={setSelectedCity}
+      />
       <div className="pt-16">
         <Routes>
-          <Route path="/" element={<HomePage user={user} setUser={setUser} />} />
+          <Route
+            path="/"
+            element={
+              <HomePage
+                user={user}
+                setUser={setUser}
+                selectedCity={selectedCity}
+              />
+            }
+          />
           <Route path="/hello" element={<Hello />} />
           <Route path="/booking" element={<BookingPage user={user} />} />
           <Route path="/details/:type/:city/:index" element={<ClubDetails />} />
