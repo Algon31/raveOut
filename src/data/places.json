@@ -1,92 +1,1285 @@
 {
   "Mysuru": {
     "pubs": [
-      {
-        "name": "Myst Lounge Bar",
-        "location": "Radisson Blu Plaza Hotel, MG Road",
-        "rating": 5.0,
-        "description": "Offers a range of cocktails, fine spirits, and Mediterranean cuisines with live music nights.",
-        "features": ["Serves Alcohol", "Outdoor Seating", "Live Music"]
-      },
-      {
-        "name": "Beer Garden Restaurant",
-        "location": "Parklane Hotel, Sri Harsha Road",
-        "rating": 4.1,
-        "description": "Known for its fresh beer, great food, and open-air seating.",
-        "features": ["Serves Alcohol", "Outdoor Seating", "Live Music"]
-      },
-      {
-        "name": "Pelican Pub & Grub House",
-        "location": "Vinoba Road, Hunsur Road",
-        "rating": 3.5,
-        "description": "A casual pub offering a variety of drinks and Indian cuisine.",
-        "features": ["Serves Alcohol", "Outdoor Seating"]
-      }
-    ],
+    {
+      "name": "Myst Lounge Bar",
+      "address": "Radisson Blu Plaza Hotel, MG Road, Mysuru, Karnataka 570011",
+      "area": "MG Road",
+      "rating": 3.9,
+      "description": "Popular venue offering vibrant atmosphere, good food and drinks.",
+      "features": ["Serves Alcohol", "Live Music"],
+      "average_price": "₹1000 for two",
+      "timings": "12:00 PM - 11:00 PM"
+    },
+    {
+      "name": "Beer Garden Restaurant",
+      "address": "Parklane Hotel, Sri Harsha Rd, Nazarbad, Mysuru, Karnataka 570010",
+      "area": "Nazarbad",
+      "rating": 4.0,
+      "description": "Open-air seating with fresh beer and great food.",
+      "features": ["Outdoor Seating", "Serves Alcohol"],
+      "average_price": "₹1200 for two",
+      "timings": "4:00 PM - 12:00 AM"
+    },
+    {
+      "name": "Pelican Pub & Grub House",
+      "address": "Vinoba Rd, Hunsur Rd, Mysuru, Karnataka 570018",
+      "area": "Hunsur Road",
+      "rating": 4.1,
+      "description": "Casual pub with Indian cuisine and good drinks.",
+      "features": ["Serves Alcohol", "Live Music"],
+      "average_price": "₹1400 for two",
+      "timings": "12:00 PM - 11:00 PM"
+    },
+    {
+      "name": "Pegs & Kegs",
+      "address": "28/4, Hunsur Rd, Vijayanagar 2nd Stage, Mysuru, 570017",
+      "area": "Vijayanagar",
+      "rating": 4.2,
+      "description": "Trendy place with upbeat music and a wide variety of spirits.",
+      "features": ["Outdoor Seating", "Serves Alcohol"],
+      "average_price": "₹1600 for two",
+      "timings": "4:00 PM - 12:00 AM"
+    },
+    {
+      "name": "The Barge",
+      "address": "Hebbal Industrial Area, Mysuru, Karnataka 570016",
+      "area": "Hebbal",
+      "rating": 4.3,
+      "description": "Microbrewery with craft beers and rustic ambience.",
+      "features": ["Serves Alcohol", "Live Music"],
+      "average_price": "₹1800 for two",
+      "timings": "12:00 PM - 11:00 PM"
+    },
+    {
+      "name": "Mysore Union",
+      "address": "Hebbal 1st Stage, Mysuru, Karnataka 570016",
+      "area": "Hebbal",
+      "rating": 4.4,
+      "description": "Industrial-style restobar with gourmet food and beer.",
+      "features": ["Outdoor Seating", "Serves Alcohol"],
+      "average_price": "₹2000 for two",
+      "timings": "4:00 PM - 12:00 AM"
+    },
+    {
+      "name": "Evolve BistroxMusic",
+      "address": "12th Main, Vijayanagar 3rd Stage, Mysuru, 570017",
+      "area": "Vijayanagar",
+      "rating": 4.5,
+      "description": "Live music venue with lively crowd and good drinks.",
+      "features": ["Serves Alcohol", "Live Music"],
+      "average_price": "₹1000 for two",
+      "timings": "12:00 PM - 11:00 PM"
+    },
+    {
+      "name": "Skydeck Resto Pub",
+      "address": "Hotel Le Grandeur, 1st Cross, Gokulam, Mysuru, 570002",
+      "area": "Gokulam",
+      "rating": 4.6,
+      "description": "Scenic rooftop bar with cozy ambiance and cocktails.",
+      "features": ["Outdoor Seating", "Serves Alcohol"],
+      "average_price": "₹1200 for two",
+      "timings": "4:00 PM - 12:00 AM"
+    },
+    {
+      "name": "Tusk",
+      "address": "1st Cross, Ashokapuram, Mysuru, Karnataka 570008",
+      "area": "Ashokapuram",
+      "rating": 4.7,
+      "description": "Modern pub with craft beers and vibrant atmosphere.",
+      "features": ["Serves Alcohol", "Live Music"],
+      "average_price": "₹1400 for two",
+      "timings": "12:00 PM - 11:00 PM"
+    },
+    {
+      "name": "Bopy’s Pub & Restaurant",
+      "address": "9th Main, Vijayanagar 1st Stage, Mysuru, 570017",
+      "area": "Vijayanagar",
+      "rating": 4.8,
+      "description": "Cozy pub offering comfort food and drinks.",
+      "features": ["Outdoor Seating", "Serves Alcohol"],
+      "average_price": "₹1600 for two",
+      "timings": "4:00 PM - 12:00 AM"
+    },
+    {
+      "name": "Purple Haze",
+      "address": "10th Main, Vijayanagar 3rd Stage, Mysuru, 570017",
+      "area": "Vijayanagar",
+      "rating": 4.9,
+      "description": "Rock music-themed pub with electrifying atmosphere.",
+      "features": ["Serves Alcohol", "Live Music"],
+      "average_price": "₹1800 for two",
+      "timings": "12:00 PM - 11:00 PM"
+    },
+    {
+      "name": "Opium Pub",
+      "address": "Hotel Pai Vista, Nazarbad Main Rd, Mysuru, 570010",
+      "area": "Nazarbad",
+      "rating": 5.0,
+      "description": "Chic pub with pan-Asian menu and cocktails.",
+      "features": ["Outdoor Seating", "Serves Alcohol"],
+      "average_price": "₹2000 for two",
+      "timings": "4:00 PM - 12:00 AM"
+    },
+    {
+      "name": "Lost & Found Pub",
+      "address": "Sayyaji Rao Rd, Nazarbad, Mysuru, 570010",
+      "area": "Nazarbad",
+      "rating": 4.1,
+      "description": "Relaxed pub with good playlist and snacks.",
+      "features": ["Serves Alcohol", "Live Music"],
+      "average_price": "₹1000 for two",
+      "timings": "12:00 PM - 11:00 PM"
+    },
+    {
+      "name": "Pupa Pub Bar & Kitchen",
+      "address": "18th Cross, Vijayanagar 2nd Stage, Mysuru, 570017",
+      "area": "Vijayanagar",
+      "rating": 4.2,
+      "description": "Lively place with global bar menu and music.",
+      "features": ["Outdoor Seating", "Serves Alcohol"],
+      "average_price": "₹1200 for two",
+      "timings": "4:00 PM - 12:00 AM"
+    },
+    {
+      "name": "Double Barrel Brewpub",
+      "address": "Hebbal Industrial Area, Mysuru, Karnataka 570016",
+      "area": "Hebbal",
+      "rating": 4.3,
+      "description": "Craft beer brewery with spacious layout.",
+      "features": ["Serves Alcohol", "Live Music"],
+      "average_price": "₹1400 for two",
+      "timings": "12:00 PM - 11:00 PM"
+    },
+    {
+      "name": "Gusto Pub",
+      "address": "Kalidasa Road, Vontikoppal, Mysuru, Karnataka 570002",
+      "area": "Vontikoppal",
+      "rating": 4.0,
+      "description": "Friendly neighborhood pub with Indian and Continental fare.",
+      "features": ["Outdoor Seating", "Serves Alcohol"],
+      "average_price": "₹1100 for two",
+      "timings": "4:00 PM - 12:00 AM"
+    },
+    {
+      "name": "Infinit Lounge Bar",
+      "address": "Hotel Le Ruchi The Prince, Hunsur Road, Mysuru, 570017",
+      "area": "Hunsur Road",
+      "rating": 4.2,
+      "description": "Upscale bar offering premium liquor and rooftop views.",
+      "features": ["Serves Alcohol", "Live Music"],
+      "average_price": "₹1400 for two",
+      "timings": "12:00 PM - 11:00 PM"
+    },
+    {
+      "name": "Khedda Lounge Bar",
+      "address": "Lalitha Mahal Palace Road, Mysuru, Karnataka 570011",
+      "area": "Lalitha Mahal",
+      "rating": 4.1,
+      "description": "Elegant bar with colonial decor and royal ambiance.",
+      "features": ["Fine Dining", "Serves Alcohol"],
+      "average_price": "₹1800 for two",
+      "timings": "4:00 PM - 11:00 PM"
+    },
+    {
+      "name": "Beer Tapper Rooftop Pub",
+      "address": "Racecourse Road, Nazarbad, Mysuru, 570010",
+      "area": "Nazarbad",
+      "rating": 4.0,
+      "description": "Rooftop bar known for relaxed ambiance and brews.",
+      "features": ["Rooftop Seating", "Serves Alcohol"],
+      "average_price": "₹1300 for two",
+      "timings": "5:00 PM - 11:00 PM"
+    },
+    {
+      "name": "Kings Q Sports Bar",
+      "address": "Ring Road, Bannimantap, Mysuru, Karnataka 570015",
+      "area": "Bannimantap",
+      "rating": 3.9,
+      "description": "Sports-themed bar with big screens and beer deals.",
+      "features": ["Serves Alcohol", "Live Sports"],
+      "average_price": "₹1000 for two",
+      "timings": "2:00 PM - 11:00 PM"
+    },
+    {
+      "name": "Rio Sky Lounge - Bar",
+      "address": "KRS Road, Metagalli, Mysuru, 570016",
+      "area": "Metagalli",
+      "rating": 4.1,
+      "description": "Stylish rooftop bar with skyline views and cocktails.",
+      "features": ["Rooftop Seating", "Serves Alcohol"],
+      "average_price": "₹1600 for two",
+      "timings": "5:00 PM - 12:00 AM"
+    },
+    {
+      "name": "Silk Bar",
+      "address": "Hotel Southern Star, Vinoba Road, Mysuru, 570005",
+      "area": "Vinoba Road",
+      "rating": 4.0,
+      "description": "Cozy indoor bar in a luxury hotel setting.",
+      "features": ["Serves Alcohol", "Indoor Seating"],
+      "average_price": "₹1400 for two",
+      "timings": "12:00 PM - 11:00 PM"
+    },
+    {
+      "name": "Cornucopia",
+      "address": "Kalidasa Road, Jayalakshmipuram, Mysuru, 570012",
+      "area": "Jayalakshmipuram",
+      "rating": 4.2,
+      "description": "European style eatery and bar with wine options.",
+      "features": ["Serves Alcohol", "Continental Food"],
+      "average_price": "₹1500 for two",
+      "timings": "12:00 PM - 10:30 PM"
+    },
+    {
+      "name": "RE-PUB-LIQ RESTO",
+      "address": "Kuvempu Nagar, Mysuru, Karnataka 570023",
+      "area": "Kuvempu Nagar",
+      "rating": 4.0,
+      "description": "Lively bar with dance nights and cocktails.",
+      "features": ["Serves Alcohol", "DJ Nights"],
+      "average_price": "₹1300 for two",
+      "timings": "6:00 PM - 12:00 AM"
+    },
+    {
+      "name": "Pegs & Mug Bar & Restaurant",
+      "address": "D Devaraj Urs Road, Mysuru, 570001",
+      "area": "Devaraj Urs Road",
+      "rating": 3.8,
+      "description": "Local hangout with affordable drinks and snacks.",
+      "features": ["Serves Alcohol", "Budget Friendly"],
+      "average_price": "₹800 for two",
+      "timings": "1:00 PM - 11:00 PM"
+    },
+    {
+      "name": "Peacock Bar & Restaurant",
+      "address": "Chamundipuram Main Road, Mysuru, Karnataka 570004",
+      "area": "Chamundipuram",
+      "rating": 4.1,
+      "description": "Family-friendly bar with diverse menu.",
+      "features": ["Serves Alcohol", "Outdoor Seating"],
+      "average_price": "₹1000 for two",
+      "timings": "12:00 PM - 11:00 PM"
+    },
+    {
+      "name": "Boat Pub",
+      "address": "KRS Road, Near Ranganathittu, Mysuru, 571606",
+      "area": "KRS Road",
+      "rating": 4.2,
+      "description": "Unique riverfront pub experience.",
+      "features": ["Outdoor Seating", "Serves Alcohol"],
+      "average_price": "₹1500 for two",
+      "timings": "4:00 PM - 11:00 PM"
+    },
+    {
+      "name": "Myst Socials",
+      "address": "Near Radisson Blu, MG Road, Mysuru, 570011",
+      "area": "MG Road",
+      "rating": 4.4,
+      "description": "Trendy lounge with social vibe and signature drinks.",
+      "features": ["Serves Alcohol", "Live Music"],
+      "average_price": "₹1600 for two",
+      "timings": "4:00 PM - 11:30 PM"
+    },
+    {
+      "name": "Iconic Resto Pub",
+      "address": "Lalithadripura Road, Mysuru, 570028",
+      "area": "Lalithadripura",
+      "rating": 4.0,
+      "description": "Spacious bar with modern interiors and good food.",
+      "features": ["Serves Alcohol", "Dance Floor"],
+      "average_price": "₹1400 for two",
+      "timings": "6:00 PM - 12:00 AM"
+    },
+    {
+      "name": "Olive Garden Restaurant & Bar",
+      "address": "Ring Road, Rajiv Nagar, Mysuru, Karnataka 570019",
+      "area": "Rajiv Nagar",
+      "rating": 4.1,
+      "description": "Open-air bar with multi-cuisine menu.",
+      "features": ["Serves Alcohol", "Garden Seating"],
+      "average_price": "₹1300 for two",
+      "timings": "12:00 PM - 11:00 PM"
+    }
+  ],
     "restaurants": [
       {
-        "name": "Fresh Catch Seafood Restaurant",
-        "rating": 4.3,
-        "description": "Specializes in fresh seafood with a variety of Indian preparations.",
-        "features": ["Seafood", "Vegetarian Friendly"]
-      },
-      {
-        "name": "Lalitha Mahal Palace Hotel",
-        "rating": 3.5,
-        "description": "Offers a blend of Indian and international cuisines in a royal setting.",
-        "features": ["Fine Dining", "Vegetarian Friendly"]
-      },
-      {
-        "name": "Poojari Fish Land",
-        "rating": 3.6,
-        "description": "Known for its authentic fish curry and dosa.",
-        "features": ["Seafood", "Vegetarian Friendly"]
-      }
+      "name": "RRR Restaurant",
+      "address": "Sri Harsha Road, Near Mysore Palace, Mysuru, Karnataka 570001",
+      "area": "Sri Harsha Road",
+      "rating": 4.5,
+      "description": "Famous for its Andhra-style biryani and South Indian meals.",
+      "features": ["Family Friendly", "AC Seating"],
+      "average_price": "₹500 for two",
+      "timings": "11:00 AM - 10:30 PM",
+      "type": "Non-Veg"
+    },
+    {
+      "name": "Oyster Bay",
+      "address": "Vijayanagar 1st Stage, Kalidasa Road, Mysuru, Karnataka 570017",
+      "area": "Vijayanagar",
+      "rating": 4.4,
+      "description": "Modern restaurant offering Indian and Continental dishes with open-air seating.",
+      "features": ["Outdoor Seating", "Fine Dining"],
+      "average_price": "₹1500 for two",
+      "timings": "12:00 PM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Hotel Mylari",
+      "address": "Nazarbad Main Road, Mysuru, Karnataka 570010",
+      "area": "Nazarbad",
+      "rating": 4.6,
+      "description": "Iconic restaurant known for soft dosas and traditional filter coffee.",
+      "features": ["Vegetarian", "Local Cuisine"],
+      "average_price": "₹200 for two",
+      "timings": "6:30 AM - 12:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "The Old House",
+      "address": "Chamrajpura, Near Clock Tower, Mysuru, Karnataka 570001",
+      "area": "Chamrajpura",
+      "rating": 4.2,
+      "description": "Known for wood-fired pizzas, pastas, and relaxed ambiance.",
+      "features": ["Pizza", "Outdoor Seating"],
+      "average_price": "₹1000 for two",
+      "timings": "12:00 PM - 10:30 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Depth N Green",
+      "address": "Gokulam 3rd Stage, Mysuru, Karnataka 570002",
+      "area": "Gokulam",
+      "rating": 4.3,
+      "description": "Vegetarian health café with vegan and gluten-free options.",
+      "features": ["Healthy Food", "Vegetarian", "Vegan Options"],
+      "average_price": "₹600 for two",
+      "timings": "9:00 AM - 9:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "La Uppu",
+      "address": "Sayyaji Rao Road, Grand Mercure Hotel, Mysuru, Karnataka 570001",
+      "area": "Sayyaji Rao Road",
+      "rating": 4.4,
+      "description": "Upscale dining with South Indian cuisine.",
+      "features": ["Fine Dining", "Buffet"],
+      "average_price": "₹1800 for two",
+      "timings": "7:00 AM - 10:30 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Spring – Radisson Blu",
+      "address": "MG Road, Radisson Blu Plaza Hotel, Mysuru, Karnataka 570010",
+      "area": "MG Road",
+      "rating": 4.5,
+      "description": "All-day dining with global cuisine and lavish buffets.",
+      "features": ["Buffet", "Multi-Cuisine"],
+      "average_price": "₹2000 for two",
+      "timings": "7:00 AM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Gufha Restaurant",
+      "address": "Hotel Pai Vista, Nazarbad, Mysuru, Karnataka 570010",
+      "area": "Nazarbad",
+      "rating": 4.3,
+      "description": "Cave-themed North Indian restaurant.",
+      "features": ["Themed Dining", "North Indian Cuisine"],
+      "average_price": "₹1200 for two",
+      "timings": "12:00 PM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Mezzaluna",
+      "address": "Windflower Resorts & Spa, Nazarbad, Mysuru, Karnataka 570010",
+      "area": "Nazarbad",
+      "rating": 4.1,
+      "description": "Italian fine dining in a serene resort atmosphere.",
+      "features": ["Fine Dining", "Italian Cuisine"],
+      "average_price": "₹2200 for two",
+      "timings": "7:00 PM - 10:30 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Mahesh Prasad",
+      "address": "Ramavilas Road, Chamundipuram, Mysuru, Karnataka 570004",
+      "area": "Chamundipuram",
+      "rating": 4.2,
+      "description": "Affordable South Indian veg restaurant.",
+      "features": ["Quick Bites", "Vegetarian"],
+      "average_price": "₹300 for two",
+      "timings": "7:00 AM - 10:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Soo Ra Sang",
+      "address": "Gokulam Main Road, Gokulam, Mysuru, Karnataka 570002",
+      "area": "Gokulam",
+      "rating": 4.0,
+      "description": "Authentic Korean cuisine in a quiet environment.",
+      "features": ["Korean", "Authentic Cuisine"],
+      "average_price": "₹1000 for two",
+      "timings": "12:00 PM - 10:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Anima Madhva Bhavan",
+      "address": "Vontikoppal, Temple Road, Mysuru, Karnataka 570002",
+      "area": "Vontikoppal",
+      "rating": 4.3,
+      "description": "Traditional Udupi restaurant with authentic Karnataka meals.",
+      "features": ["Traditional", "Vegetarian"],
+      "average_price": "₹250 for two",
+      "timings": "7:00 AM - 9:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Mannars Veg Restaurant",
+      "address": "Ashoka Road, Lashkar Mohalla, Mysuru, Karnataka 570001",
+      "area": "Lashkar Mohalla",
+      "rating": 4.0,
+      "description": "Popular spot for pure veg South Indian meals.",
+      "features": ["Vegetarian", "Budget Friendly"],
+      "average_price": "₹400 for two",
+      "timings": "7:00 AM - 10:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Green Leaf",
+      "address": "Kalidasa Road, Jayalakshmipuram, Mysuru, Karnataka 570012",
+      "area": "Jayalakshmipuram",
+      "rating": 4.2,
+      "description": "Restaurant with multi-cuisine options and family dining.",
+      "features": ["Family Dining", "Multi-Cuisine"],
+      "average_price": "₹900 for two",
+      "timings": "12:00 PM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Empire Restaurant",
+      "address": "Bannimantap, Ring Road Junction, Mysuru, Karnataka 570015",
+      "area": "Bannimantap",
+      "rating": 4.1,
+      "description": "Well-known chain for quick-service Mughlai and Arabian food.",
+      "features": ["Mughlai", "Quick Service"],
+      "average_price": "₹700 for two",
+      "timings": "12:00 PM - 1:00 AM",
+      "type": "Non-Veg"
+    },
+    {
+      "name": "The Barge",
+      "address": "Chandrakala Hospital Road, Gokulam, Mysuru, Karnataka 570002",
+      "area": "Gokulam",
+      "rating": 4.3,
+      "description": "Modern brewpub with great food, drinks, and ambiance.",
+      "features": ["Brewery", "Live Music", "Rooftop Seating"],
+      "average_price": "₹1600 for two",
+      "timings": "12:00 PM - 11:30 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "By The Way",
+      "address": "Kalidasa Road, Jayalakshmipuram, Mysuru, Karnataka 570012",
+      "area": "Jayalakshmipuram",
+      "rating": 4.2,
+      "description": "Casual spot for Indian, Chinese and tandoori delights.",
+      "features": ["Family Friendly", "Outdoor Seating"],
+      "average_price": "₹1000 for two",
+      "timings": "12:00 PM - 10:30 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Ginger Garlic",
+      "address": "Vivekananda Circle, Saraswathipuram, Mysuru, Karnataka 570009",
+      "area": "Saraswathipuram",
+      "rating": 4.0,
+      "description": "Classic multi-cuisine family restaurant.",
+      "features": ["Multi-Cuisine", "AC Seating"],
+      "average_price": "₹800 for two",
+      "timings": "11:00 AM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Barbeque Nation",
+      "address": "BM Habitat Mall, Jayalakshmipuram, Mysuru, Karnataka 570012",
+      "area": "Jayalakshmipuram",
+      "rating": 4.4,
+      "description": "Popular buffet chain for Indian grills and desserts.",
+      "features": ["Buffet", "Live Grill"],
+      "average_price": "₹1700 for two",
+      "timings": "12:00 PM - 3:30 PM, 6:30 PM - 10:30 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Tina’s Café",
+      "address": "Temple Road, Vontikoppal, Mysuru, Karnataka 570002",
+      "area": "Vontikoppal",
+      "rating": 4.1,
+      "description": "Peaceful café with sandwiches, pasta, and desserts.",
+      "features": ["Cafe", "Vegetarian"],
+      "average_price": "₹600 for two",
+      "timings": "10:00 AM - 9:30 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "MySouth",
+      "address": "BM Habitat Mall, Jayalakshmipuram, Mysuru, Karnataka 570012",
+      "area": "Jayalakshmipuram",
+      "rating": 4.2,
+      "description": "Modern South Indian cuisine with stylish interiors.",
+      "features": ["South Indian", "Family Friendly"],
+      "average_price": "₹700 for two",
+      "timings": "8:00 AM - 10:30 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Curry Leaf",
+      "address": "D. Devaraj Urs Road, Mysuru, Karnataka 570001",
+      "area": "Devaraj Urs Road",
+      "rating": 4.0,
+      "description": "Budget-friendly Indian food with quick service.",
+      "features": ["North Indian", "South Indian"],
+      "average_price": "₹600 for two",
+      "timings": "11:00 AM - 10:30 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Parklane Hotel Restaurant",
+      "address": "Sri Harsha Road, Near Jaganmohan Palace, Mysuru, Karnataka 570001",
+      "area": "Sri Harsha Road",
+      "rating": 4.1,
+      "description": "Casual dining with Indian and Chinese options.",
+      "features": ["Live Music", "Outdoor Seating"],
+      "average_price": "₹1000 for two",
+      "timings": "12:00 PM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Hotel Siddharta",
+      "address": "Nazarbad Road, Nazarbad, Mysuru, Karnataka 570010",
+      "area": "Nazarbad",
+      "rating": 4.2,
+      "description": "Pure veg restaurant with thalis and dosas.",
+      "features": ["Vegetarian", "South Indian"],
+      "average_price": "₹500 for two",
+      "timings": "7:00 AM - 10:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Mosaic – Country Inn & Suites",
+      "address": "Hebbal Industrial Area, Ring Road, Mysuru, Karnataka 570016",
+      "area": "Hebbal",
+      "rating": 4.3,
+      "description": "Upscale all-day restaurant with a variety of cuisines.",
+      "features": ["Fine Dining", "Buffet"],
+      "average_price": "₹1800 for two",
+      "timings": "7:00 AM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Chakra House Café",
+      "address": "Gokulam Main Road, Gokulam, Mysuru, Karnataka 570002",
+      "area": "Gokulam",
+      "rating": 4.5,
+      "description": "Yoga-themed vegetarian café with healthy meals.",
+      "features": ["Vegetarian", "Organic"],
+      "average_price": "₹600 for two",
+      "timings": "9:00 AM - 8:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Tandoorie Swaad",
+      "address": "Kuvempu Nagar, Mysuru, Karnataka 570023",
+      "area": "Kuvempu Nagar",
+      "rating": 4.1,
+      "description": "Spicy North Indian and tandoori food specialist.",
+      "features": ["Tandoori", "Home Delivery"],
+      "average_price": "₹800 for two",
+      "timings": "12:00 PM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Radha Krishna Bhavan",
+      "address": "Sayyaji Rao Road, Devaraja Mohalla, Mysuru, Karnataka 570001",
+      "area": "Devaraja Mohalla",
+      "rating": 4.0,
+      "description": "Budget-friendly, authentic South Indian meals.",
+      "features": ["Vegetarian", "Quick Bites"],
+      "average_price": "₹400 for two",
+      "timings": "7:00 AM - 10:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Fish Land",
+      "address": "Near KSRTC Bus Stand, Mysuru, Karnataka 570001",
+      "area": "Banni Mantap",
+      "rating": 4.2,
+      "description": "Seafood restaurant popular for Mangalorean dishes.",
+      "features": ["Seafood", "Mangalorean Cuisine"],
+      "average_price": "₹1000 for two",
+      "timings": "12:00 PM - 10:30 PM",
+      "type": "Non-Veg"
+    },
+    {
+      "name": "Tegu Mess",
+      "address": "Kuvempu Nagar, Near Nanjumalige Circle, Mysuru, Karnataka 570023",
+      "area": "Kuvempu Nagar",
+      "rating": 4.3,
+      "description": "Legendary local mess serving authentic Karnataka meals.",
+      "features": ["Local Cuisine", "Budget Friendly"],
+      "average_price": "₹300 for two",
+      "timings": "12:00 PM - 3:00 PM, 7:00 PM - 10:00 PM",
+      "type": "Veg and Non-Veg Available"
+    }
     ]
   },
   "Bengaluru": {
     "pubs": [
       {
-        "name": "Kling Brewery",
-        "location": "Koramangala",
-        "rating": 4.9,
-        "description": "A brewery offering a variety of craft beers and a lively atmosphere.",
-        "features": ["Serves Alcohol", "Outdoor Seating", "Live Music"]
-      },
-      {
-        "name": "Hype",
-        "location": "Indiranagar",
-        "rating": 4.8,
-        "description": "A trendy pub known for its cocktails and DJ nights.",
-        "features": ["Serves Alcohol", "Outdoor Seating", "Live Music"]
-      },
-      {
-        "name": "The 13th Floor",
-        "location": "MG Road",
-        "rating": 4.5,
-        "description": "Offers panoramic views of the city with a selection of drinks.",
-        "features": ["Serves Alcohol", "Outdoor Seating"]
-      }
+      "name": "Toit Brewpub",
+      "address": "100 Feet Road, Indiranagar, Bengaluru, Karnataka 560038",
+      "area": "Indiranagar",
+      "rating": 4.5,
+      "description": "One of Bengaluru’s most popular microbreweries offering craft beers, hearty food, and vibrant vibes.",
+      "features": ["Craft Beer", "Live Music", "Outdoor Seating"],
+      "average_price": "₹2000 for two",
+      "timings": "12:00 PM - 1:00 AM"
+    },
+    {
+      "name": "Arbor Brewing Company",
+      "address": "8, Magrath Road, Ashok Nagar, Bengaluru, Karnataka 560025",
+      "area": "Ashok Nagar",
+      "rating": 4.4,
+      "description": "American-style pub known for their house-brewed beers, delicious appetizers, and energetic crowd.",
+      "features": ["House-Brewed Beer", "Live Music", "Indoor & Outdoor Seating"],
+      "average_price": "₹2200 for two",
+      "timings": "12:00 PM - 1:00 AM"
+    },
+    {
+      "name": "The Humming Tree",
+      "address": "12th Main Road, Indiranagar, Bengaluru, Karnataka 560038",
+      "area": "Indiranagar",
+      "rating": 4.2,
+      "description": "Cultural space with drinks, gigs, food and rooftop seating.",
+      "features": ["Live Events", "Rooftop", "Art Shows"],
+      "average_price": "₹1600 for two",
+      "timings": "5:00 PM - 11:30 PM"
+    },
+    {
+      "name": "The Boozy Griffin",
+      "address": "Koramangala 5th Block, Bengaluru, Karnataka 560095",
+      "area": "Koramangala",
+      "rating": 4.0,
+      "description": "British-style pub with great music, drinks, and cozy interiors.",
+      "features": ["Dance Floor", "DJ Nights"],
+      "average_price": "₹1500 for two",
+      "timings": "12:00 PM - 12:30 AM"
+    },
+    {
+      "name": "Bob's Bar",
+      "address": "100 Feet Road, Indiranagar, Bengaluru, Karnataka 560038",
+      "area": "Indiranagar",
+      "rating": 4.3,
+      "description": "Old Bangalore vibes with cheap booze and Karnataka food.",
+      "features": ["Budget Friendly", "Regional Cuisine"],
+      "average_price": "₹800 for two",
+      "timings": "11:00 AM - 11:30 PM"
+    },
+    {
+      "name": "Pecos Classic",
+      "address": "Brigade Road, Ashok Nagar, Bengaluru, Karnataka 560025",
+      "area": "Brigade Road",
+      "rating": 4.1,
+      "description": "Retro pub with rock music, affordable drinks, and old-school charm.",
+      "features": ["Retro Music", "Budget Friendly"],
+      "average_price": "₹1000 for two",
+      "timings": "12:00 PM - 11:00 PM"
+    },
+    {
+      "name": "The 13th Floor",
+      "address": "MG Road, Barton Centre, Bengaluru, Karnataka 560001",
+      "area": "MG Road",
+      "rating": 4.5,
+      "description": "Upscale rooftop bar with stunning city views and cocktails.",
+      "features": ["Rooftop", "City View", "Fine Cocktails"],
+      "average_price": "₹2500 for two",
+      "timings": "5:30 PM - 11:30 PM"
+    },
+    {
+      "name": "Byg Brewski Brewing Company",
+      "address": "Sarjapur Road, Bengaluru, Karnataka 560035",
+      "area": "Sarjapur",
+      "rating": 4.6,
+      "description": "Massive brewery with a scenic setting, craft beers, and a wide food menu.",
+      "features": ["Largest Brewpub", "Open Ambience"],
+      "average_price": "₹2500 for two",
+      "timings": "12:00 PM - 1:00 AM"
+    },
+    {
+      "name": "Fenny’s Lounge & Kitchen",
+      "address": "Koramangala 7th Block, Bengaluru, Karnataka 560095",
+      "area": "Koramangala",
+      "rating": 4.2,
+      "description": "Lively lounge with Goan food, tropical vibes and cocktails.",
+      "features": ["Open Air", "Lounge", "Goan Cuisine"],
+      "average_price": "₹1700 for two",
+      "timings": "12:00 PM - 12:00 AM"
+    },
+    {
+      "name": "Social",
+      "address": "Church Street, Bengaluru, Karnataka 560001",
+      "area": "Church Street",
+      "rating": 4.4,
+      "description": "Trendy chain offering coworking space by day, pub vibes by night.",
+      "features": ["Co-working", "Loud Music", "Good Food"],
+      "average_price": "₹1500 for two",
+      "timings": "9:00 AM - 12:00 AM"
+    },
+    {
+      "name": "The Local",
+      "address": "Kalyan Nagar, HRBR Layout, Bengaluru, Karnataka 560043",
+      "area": "Kalyan Nagar",
+      "rating": 4.0,
+      "description": "Neighborhood bar with good drinks and chill music.",
+      "features": ["Casual", "Friendly Staff"],
+      "average_price": "₹1300 for two",
+      "timings": "12:00 PM - 11:30 PM"
+    },
+    {
+      "name": "Gilly’s Restobar",
+      "address": "Koramangala 4th Block, Bengaluru, Karnataka 560095",
+      "area": "Koramangala",
+      "rating": 4.1,
+      "description": "Popular hangout for youth with music, food and cheap booze.",
+      "features": ["Dance Floor", "DJ Events"],
+      "average_price": "₹1400 for two",
+      "timings": "12:00 PM - 1:00 AM"
+    },
+    {
+      "name": "Watson’s",
+      "address": "Ulsoor Road, Bengaluru, Karnataka 560042",
+      "area": "Ulsoor",
+      "rating": 4.2,
+      "description": "Colonial-themed pub known for casual drinks and great food.",
+      "features": ["Heritage Style", "Laid-back"],
+      "average_price": "₹1200 for two",
+      "timings": "12:00 PM - 12:00 AM"
+    },
+    {
+      "name": "Big Pitcher",
+      "address": "Old Airport Road, Domlur, Bengaluru, Karnataka 560071",
+      "area": "Domlur",
+      "rating": 4.3,
+      "description": "Multi-level brewpub with different themes, great music and live gigs.",
+      "features": ["Multi-Level", "Craft Beer", "Live Music"],
+      "average_price": "₹2000 for two",
+      "timings": "12:00 PM - 1:00 AM"
+    },
+    {
+      "name": "Skyye Lounge",
+      "address": "UB City, Vittal Mallya Road, Bengaluru, Karnataka 560001",
+      "area": "UB City",
+      "rating": 4.5,
+      "description": "Chic rooftop lounge with 360° city views and a premium bar menu.",
+      "features": ["Luxury Lounge", "Cityscape View"],
+      "average_price": "₹3000 for two",
+      "timings": "5:30 PM - 1:00 AM"
+    },
+    {
+      "name": "Vapour Pub & Brewery",
+      "address": "100 Feet Road, Indiranagar, Bengaluru, Karnataka 560038",
+      "area": "Indiranagar",
+      "rating": 4.2,
+      "description": "Trendy brewpub with a rooftop area, craft beers, and lively atmosphere.",
+      "features": ["Rooftop", "Craft Beer", "DJ Nights"],
+      "average_price": "₹1800 for two",
+      "timings": "12:00 PM - 1:00 AM"
+    },
+    {
+      "name": "The Pump House",
+      "address": "JP Nagar 3rd Phase, Bengaluru, Karnataka 560078",
+      "area": "JP Nagar",
+      "rating": 4.3,
+      "description": "Microbrewery with open garden seating and modern architecture.",
+      "features": ["Garden Seating", "Craft Beer", "Pet Friendly"],
+      "average_price": "₹2000 for two",
+      "timings": "12:00 PM - 1:00 AM"
+    },
+    {
+      "name": "The Black Rabbit",
+      "address": "100 Feet Road, Indiranagar, Bengaluru, Karnataka 560038",
+      "area": "Indiranagar",
+      "rating": 4.1,
+      "description": "Stylish pub offering great cocktails, music and ambiance.",
+      "features": ["Cocktails", "Stylish Interior"],
+      "average_price": "₹1800 for two",
+      "timings": "12:00 PM - 1:00 AM"
+    },
+    {
+      "name": "Bootlegger",
+      "address": "Lavelle Road, Ashok Nagar, Bengaluru, Karnataka 560001",
+      "area": "Lavelle Road",
+      "rating": 4.2,
+      "description": "Retro-themed pub with affordable drinks and sports screening.",
+      "features": ["Retro Vibe", "Sports Screenings"],
+      "average_price": "₹1400 for two",
+      "timings": "12:00 PM - 12:00 AM"
+    },
+    {
+      "name": "Biergarten",
+      "address": "Whitefield Main Road, Bengaluru, Karnataka 560066",
+      "area": "Whitefield",
+      "rating": 4.4,
+      "description": "Scenic microbrewery with lush ambiance and European vibe.",
+      "features": ["Scenic Decor", "Outdoor Seating", "Brewery"],
+      "average_price": "₹2200 for two",
+      "timings": "12:00 PM - 1:00 AM"
+    },
+    {
+      "name": "Communiti",
+      "address": "Residency Road, Ashok Nagar, Bengaluru, Karnataka 560025",
+      "area": "Residency Road",
+      "rating": 4.5,
+      "description": "Massive space with open seating, microbrews, and crowd-favorite food.",
+      "features": ["Huge Space", "Craft Beer", "Lively Crowd"],
+      "average_price": "₹2000 for two",
+      "timings": "12:00 PM - 12:30 AM"
+    },
+    {
+      "name": "The Yellow Submarine",
+      "address": "Bannerghatta Road, JP Nagar, Bengaluru, Karnataka 560076",
+      "area": "JP Nagar",
+      "rating": 4.3,
+      "description": "Themed pub with Beatles décor, great food and drinks.",
+      "features": ["Beatles Theme", "Terrace View"],
+      "average_price": "₹1700 for two",
+      "timings": "12:00 PM - 1:00 AM"
+    },
+    {
+      "name": "Doff Pub",
+      "address": "100 Feet Road, Indiranagar, Bengaluru, Karnataka 560038",
+      "area": "Indiranagar",
+      "rating": 4.0,
+      "description": "Popular hangout for football fans and casual evenings.",
+      "features": ["Sports Pub", "Rooftop Seating"],
+      "average_price": "₹1300 for two",
+      "timings": "1:00 PM - 11:30 PM"
+    },
+    {
+      "name": "Prost Brewpub",
+      "address": "Koramangala 4th Block, Bengaluru, Karnataka 560095",
+      "area": "Koramangala",
+      "rating": 4.2,
+      "description": "German-style brewery with rustic setup and good crowd.",
+      "features": ["Rustic Decor", "Craft Beer"],
+      "average_price": "₹1800 for two",
+      "timings": "12:00 PM - 1:00 AM"
+    },
+    {
+      "name": "House of Commons",
+      "address": "HSR Layout, Bengaluru, Karnataka 560102",
+      "area": "HSR Layout",
+      "rating": 4.1,
+      "description": "UK Parliament themed bar with a desi twist.",
+      "features": ["British Theme", "Casual Vibes"],
+      "average_price": "₹1400 for two",
+      "timings": "12:00 PM - 12:30 AM"
+    },
+    {
+      "name": "La Casa Brewery",
+      "address": "Kanakapura Road, JP Nagar, Bengaluru, Karnataka 560078",
+      "area": "JP Nagar",
+      "rating": 4.0,
+      "description": "Chic microbrewery with great ambiance and handcrafted beers.",
+      "features": ["Family Friendly", "Brewery"],
+      "average_price": "₹1500 for two",
+      "timings": "1:00 PM - 11:30 PM"
+    },
+    {
+      "name": "Happy Brew",
+      "address": "Koramangala 5th Block, Bengaluru, Karnataka 560095",
+      "area": "Koramangala",
+      "rating": 4.1,
+      "description": "Casual pub with garden seating and relaxed vibe.",
+      "features": ["Casual Seating", "Live Music"],
+      "average_price": "₹1300 for two",
+      "timings": "12:00 PM - 12:00 AM"
+    },
+    {
+      "name": "Big Barrel Brewpub",
+      "address": "Whitefield Main Road, Bengaluru, Karnataka 560066",
+      "area": "Whitefield",
+      "rating": 4.3,
+      "description": "Massive brewpub with fun lighting, craft beer and food.",
+      "features": ["Themed Decor", "Craft Beer"],
+      "average_price": "₹2000 for two",
+      "timings": "12:00 PM - 12:30 AM"
+    },
+    {
+      "name": "Sotally Tober",
+      "address": "Koramangala 4th Block, Bengaluru, Karnataka 560095",
+      "area": "Koramangala",
+      "rating": 4.2,
+      "description": "Quirky name, quirky decor, solid food and bar.",
+      "features": ["Instagrammable", "Quirky Interiors"],
+      "average_price": "₹1400 for two",
+      "timings": "12:00 PM - 12:30 AM"
+    },
+    {
+      "name": "Levitate Brewery & Kitchen",
+      "address": "JP Nagar 5th Phase, Bengaluru, Karnataka 560078",
+      "area": "JP Nagar",
+      "rating": 4.3,
+      "description": "Trendy rooftop brewery with signature beers and skyline view.",
+      "features": ["Rooftop Brewery", "City View"],
+      "average_price": "₹1800 for two",
+      "timings": "12:00 PM - 12:30 AM"
+    }
     ],
     "restaurants": [
       {
-        "name": "Karavalli @ Taj",
-        "rating": 4.8,
-        "description": "Specializes in coastal Indian cuisine with a focus on seafood.",
-        "features": ["Seafood", "Fine Dining"]
-      },
-      {
-        "name": "Time Traveller",
-        "rating": 4.9,
-        "description": "Offers a fusion of Indian and international cuisines in a contemporary setting.",
-        "features": ["Vegetarian Friendly", "Fine Dining"]
-      },
-      {
-        "name": "Nook",
-        "rating": 4.5,
-        "description": "A casual dining restaurant offering a variety of global cuisines.",
-        "features": ["Vegetarian Friendly", "Casual Dining"]
-      }
+      "name": "MTR - Mavalli Tiffin Room",
+      "address": "14, Lalbagh Road, Mavalli, Bengaluru, Karnataka 560004",
+      "area": "Lalbagh",
+      "rating": 4.6,
+      "description": "Historic restaurant serving traditional South Indian vegetarian meals since 1924.",
+      "features": ["Pure Veg", "Traditional Meals", "Family Friendly"],
+      "average_price": "₹600 for two",
+      "timings": "6:30 AM - 9:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Airlines Hotel",
+      "address": "No. 4, Madras Bank Road, Lavelle Road, Bengaluru, Karnataka 560001",
+      "area": "Lavelle Road",
+      "rating": 4.2,
+      "description": "Open-air heritage spot for dosas, idlis and coffee.",
+      "features": ["Outdoor Seating", "Vegetarian", "Heritage"],
+      "average_price": "₹500 for two",
+      "timings": "6:30 AM - 10:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Karavalli",
+      "address": "The Gateway Hotel, Residency Road, Bengaluru, Karnataka 560025",
+      "area": "Residency Road",
+      "rating": 4.5,
+      "description": "Fine-dining coastal cuisine from Kerala, Mangalore and Goa.",
+      "features": ["Coastal Cuisine", "Luxury Dining"],
+      "average_price": "₹3000 for two",
+      "timings": "12:00 PM - 3:30 PM, 7:00 PM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "CTR - Central Tiffin Room",
+      "address": "7th Cross Rd, Malleshwaram, Bengaluru, Karnataka 560003",
+      "area": "Malleshwaram",
+      "rating": 4.5,
+      "description": "Old-school eatery famed for buttery benne dosas.",
+      "features": ["Budget Friendly", "Vegetarian", "Local Favorite"],
+      "average_price": "₹300 for two",
+      "timings": "7:00 AM - 12:30 PM, 4:00 PM - 9:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Koshy’s",
+      "address": "39, St. Marks Road, Bengaluru, Karnataka 560001",
+      "area": "St. Marks Road",
+      "rating": 4.3,
+      "description": "Iconic Bengaluru café offering a wide global menu.",
+      "features": ["Vintage Feel", "Multi-Cuisine"],
+      "average_price": "₹1200 for two",
+      "timings": "9:00 AM - 11:30 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Shivaji Military Hotel",
+      "address": "Jayanagar 8th Block, Bengaluru, Karnataka 560070",
+      "area": "Jayanagar",
+      "rating": 4.4,
+      "description": "Legendary spot for non-veg biryani and mutton dishes.",
+      "features": ["Military Style", "Non-Veg Special"],
+      "average_price": "₹800 for two",
+      "timings": "6:30 AM - 3:30 PM",
+      "type": "Non-Veg"
+    },
+    {
+      "name": "Vidyarthi Bhavan",
+      "address": "Gandhi Bazaar, Basavanagudi, Bengaluru, Karnataka 560004",
+      "area": "Basavanagudi",
+      "rating": 4.4,
+      "description": "Iconic vegetarian restaurant known for crispy masala dosas.",
+      "features": ["Historic", "Vegetarian", "Affordable"],
+      "average_price": "₹250 for two",
+      "timings": "6:30 AM - 11:30 AM, 2:00 PM - 8:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Empire Restaurant",
+      "address": "Church Street, Bengaluru, Karnataka 560001",
+      "area": "Church Street",
+      "rating": 4.0,
+      "description": "Popular chain offering Arabian, Indian and late-night food.",
+      "features": ["Late Night", "Fast Service"],
+      "average_price": "₹1000 for two",
+      "timings": "12:00 PM - 3:00 AM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Rim Naam – The Oberoi",
+      "address": "MG Road, Bengaluru, Karnataka 560001",
+      "area": "MG Road",
+      "rating": 4.6,
+      "description": "Romantic outdoor restaurant with Asian and seafood delicacies.",
+      "features": ["Luxury", "Romantic", "Seafood"],
+      "average_price": "₹4000 for two",
+      "timings": "12:30 PM - 3:00 PM, 7:00 PM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Truffles",
+      "address": "St. Marks Road, Bengaluru, Karnataka 560001",
+      "area": "St. Marks Road",
+      "rating": 4.3,
+      "description": "Youth-favorite for burgers, desserts, and café vibes.",
+      "features": ["Fast Food", "Casual Dining"],
+      "average_price": "₹800 for two",
+      "timings": "11:00 AM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "The Fatty Bao",
+      "address": "Indiranagar 12th Main, Bengaluru, Karnataka 560038",
+      "area": "Indiranagar",
+      "rating": 4.4,
+      "description": "Trendy Asian gastrobar known for baos and sushi.",
+      "features": ["Asian Fusion", "Trendy Decor"],
+      "average_price": "₹2000 for two",
+      "timings": "12:00 PM - 3:30 PM, 7:00 PM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Corner House Ice Cream",
+      "address": "Residency Road, Bengaluru, Karnataka 560025",
+      "area": "Residency Road",
+      "rating": 4.5,
+      "description": "City's favorite dessert spot for sundaes and brownies.",
+      "features": ["Dessert Only", "Iconic"],
+      "average_price": "₹300 for two",
+      "timings": "11:00 AM - 11:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Rajdhani Thali Restaurant",
+      "address": "Orion Mall, Rajajinagar, Bengaluru, Karnataka 560055",
+      "area": "Rajajinagar",
+      "rating": 4.2,
+      "description": "Rajasthani-Gujarati vegetarian thali meals served traditionally.",
+      "features": ["Thali", "Family Friendly"],
+      "average_price": "₹1000 for two",
+      "timings": "12:00 PM - 3:30 PM, 7:00 PM - 10:30 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Nagarjuna",
+      "address": "Residency Road, Bengaluru, Karnataka 560025",
+      "area": "Residency Road",
+      "rating": 4.3,
+      "description": "Andhra-style meals and spicy biryanis served on banana leaves.",
+      "features": ["Spicy Food", "South Indian"],
+      "average_price": "₹900 for two",
+      "timings": "11:30 AM - 10:30 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Kritunga Restaurant",
+      "address": "Koramangala 5th Block, Bengaluru, Karnataka 560095",
+      "area": "Koramangala",
+      "rating": 4.0,
+      "description": "Specializes in Rayalaseema-style spicy non-veg dishes.",
+      "features": ["Rayalaseema Cuisine", "Spicy"],
+      "average_price": "₹800 for two",
+      "timings": "12:00 PM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Sattvam",
+      "address": "Sadashivanagar, Bengaluru, Karnataka 560080",
+      "area": "Sadashivanagar",
+      "rating": 4.5,
+      "description": "Upscale sattvic vegetarian fine-dining experience.",
+      "features": ["Sattvic", "Buffet", "No Onion-Garlic"],
+      "average_price": "₹1500 for two",
+      "timings": "12:00 PM - 3:30 PM, 7:00 PM - 10:30 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Green Theory",
+      "address": "Convent Road, Richmond Town, Bengaluru, Karnataka 560025",
+      "area": "Richmond Town",
+      "rating": 4.4,
+      "description": "Vegan-friendly café with continental dishes and a garden vibe.",
+      "features": ["Vegan Options", "Organic"],
+      "average_price": "₹900 for two",
+      "timings": "11:00 AM - 10:30 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Nandhini Deluxe",
+      "address": "St. Marks Road, Bengaluru, Karnataka 560001",
+      "area": "St. Marks Road",
+      "rating": 4.1,
+      "description": "Famous for spicy Andhra meals and biryani.",
+      "features": ["Andhra Style", "Affordable"],
+      "average_price": "₹800 for two",
+      "timings": "11:00 AM - 10:30 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Punjabi Rasoi",
+      "address": "Indiranagar, Bengaluru, Karnataka 560038",
+      "area": "Indiranagar",
+      "rating": 4.2,
+      "description": "Hearty Punjabi food with large portions and rustic vibe.",
+      "features": ["Punjabi Cuisine", "North Indian"],
+      "average_price": "₹1200 for two",
+      "timings": "12:00 PM - 3:30 PM, 7:00 PM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Sly Granny",
+      "address": "Indiranagar 12th Main, Bengaluru, Karnataka 560038",
+      "area": "Indiranagar",
+      "rating": 4.3,
+      "description": "Creative European and Indian fusion food with quirky interiors.",
+      "features": ["Fusion", "Stylish Decor"],
+      "average_price": "₹2000 for two",
+      "timings": "12:00 PM - 11:30 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Barbecue Nation",
+      "address": "Indiranagar, Bengaluru, Karnataka 560038",
+      "area": "Indiranagar",
+      "rating": 4.4,
+      "description": "Buffet chain offering grilled starters and Indian mains.",
+      "features": ["Live Grill", "Buffet"],
+      "average_price": "₹1800 for two",
+      "timings": "12:00 PM - 3:30 PM, 6:30 PM - 10:30 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Brahmin’s Coffee Bar",
+      "address": "Ranga Rao Road, Shankarapura, Bengaluru, Karnataka 560004",
+      "area": "Shankarapura",
+      "rating": 4.6,
+      "description": "Legendary quick-bite spot famous for idli, vada, and filter coffee.",
+      "features": ["South Indian", "Quick Service", "Budget Friendly"],
+      "average_price": "₹200 for two",
+      "timings": "6:00 AM - 12:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Hallimane",
+      "address": "Sampige Road, Malleshwaram, Bengaluru, Karnataka 560003",
+      "area": "Malleshwaram",
+      "rating": 4.2,
+      "description": "Traditional Karnataka-style meals in a rustic setting.",
+      "features": ["Karnataka Cuisine", "Home-style"],
+      "average_price": "₹600 for two",
+      "timings": "7:30 AM - 10:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Paradise Biryani",
+      "address": "Indiranagar, Bengaluru, Karnataka 560038",
+      "area": "Indiranagar",
+      "rating": 4.0,
+      "description": "Famous Hyderabad-based chain for biryanis and kebabs.",
+      "features": ["Biryani", "Quick Bites"],
+      "average_price": "₹900 for two",
+      "timings": "11:00 AM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Nagarjuna Chimney",
+      "address": "Koramangala 6th Block, Bengaluru, Karnataka 560095",
+      "area": "Koramangala",
+      "rating": 4.1,
+      "description": "Laid-back Andhra restaurant with biryanis and meals.",
+      "features": ["Andhra Cuisine", "Quick Service"],
+      "average_price": "₹800 for two",
+      "timings": "11:00 AM - 10:30 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Meghana Foods",
+      "address": "Residency Road, Bengaluru, Karnataka 560025",
+      "area": "Residency Road",
+      "rating": 4.3,
+      "description": "Famous for spicy Andhra biryani and full meals.",
+      "features": ["Spicy Biryani", "Quick Service"],
+      "average_price": "₹900 for two",
+      "timings": "11:00 AM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Sree Krishna Kafe",
+      "address": "Koramangala 5th Block, Bengaluru, Karnataka 560095",
+      "area": "Koramangala",
+      "rating": 4.2,
+      "description": "Authentic Tamil vegetarian meals served on banana leaves.",
+      "features": ["Home Style", "Banana Leaf", "Pure Veg"],
+      "average_price": "₹500 for two",
+      "timings": "7:00 AM - 9:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Sukh Sagar",
+      "address": "Gandhi Bazaar, Basavanagudi, Bengaluru, Karnataka 560004",
+      "area": "Basavanagudi",
+      "rating": 4.0,
+      "description": "Old-style restaurant offering a wide veg menu including chaats.",
+      "features": ["Pure Veg", "Multi-Cuisine"],
+      "average_price": "₹700 for two",
+      "timings": "8:00 AM - 10:30 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Toscano",
+      "address": "UB City, Vittal Mallya Road, Bengaluru, Karnataka 560001",
+      "area": "UB City",
+      "rating": 4.5,
+      "description": "Elegant Italian restaurant known for wood-fired pizzas and wine.",
+      "features": ["Italian", "Fine Dining", "Wine"],
+      "average_price": "₹2500 for two",
+      "timings": "12:00 PM - 3:30 PM, 7:00 PM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    },
+    {
+      "name": "Malgudi Vattika",
+      "address": "Mysore Road, Kumbalgodu, Bengaluru, Karnataka 560074",
+      "area": "Mysore Road",
+      "rating": 4.2,
+      "description": "Traditional-style restaurant with authentic South Indian veg meals.",
+      "features": ["Rustic Setting", "South Indian"],
+      "average_price": "₹800 for two",
+      "timings": "7:00 AM - 10:00 PM",
+      "type": "Veg"
+    },
+    {
+      "name": "Bene – Sheraton Grand",
+      "address": "Sheraton Grand, Rajajinagar, Bengaluru, Karnataka 560055",
+      "area": "Rajajinagar",
+      "rating": 4.6,
+      "description": "Italian fine-dining restaurant offering pasta, risotto, and wine.",
+      "features": ["Luxury", "Italian", "Romantic"],
+      "average_price": "₹3000 for two",
+      "timings": "12:00 PM - 3:00 PM, 7:00 PM - 11:00 PM",
+      "type": "Veg and Non-Veg Available"
+    }
     ]
   }
 }
