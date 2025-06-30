@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import data from "../data/places.json";
 import itemImage from "../assets/images/mpro.jpg";
 
@@ -21,8 +21,48 @@ function renderStars(rating) {
 }
 
 export default function HomePage({ user, setUser, selectedCity }) {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [areaSuggestions, setAreaSuggestions] = useState([]);
+  const [allAreas, setAllAreas] = useState([]);
+  const navigate = useNavigate();
+
   const pubs = data[selectedCity]?.pubs || [];
   const restaurants = data[selectedCity]?.restaurants || [];
+
+  useEffect(() => {
+    const areas = new Set();
+    if (!selectedCity || !data[selectedCity]) return;
+
+    for (const cat in data[selectedCity]) {
+      data[selectedCity][cat].forEach((item) => {
+        const areaText = item.area || item.location || item.place;
+        if (areaText) areas.add(areaText.trim());
+      });
+    }
+
+    setAllAreas([...areas]);
+  }, [selectedCity]);
+
+  const handleInputChange = (value) => {
+    setSearchTerm(value);
+
+    if (!value.trim()) {
+      setAreaSuggestions([]);
+      return;
+    }
+
+    const filtered = allAreas.filter((a) =>
+      a.toLowerCase().includes(value.toLowerCase())
+    );
+
+    setAreaSuggestions(filtered.slice(0, 5));
+  };
+
+  const handleSearch = () => {
+    if (searchTerm.trim()) {
+      navigate(`/search?city=${selectedCity}&area=${encodeURIComponent(searchTerm.trim())}`);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6 pt-24">
@@ -32,11 +72,39 @@ export default function HomePage({ user, setUser, selectedCity }) {
         <p className="text-gray-300 mb-6">
           See what's trending {user?.username || ""}, who's going, and book your spot instantly.
         </p>
-        <input
-          type="text"
-          placeholder={`Search for pubs or restaurants in ${selectedCity}`}
-          className="w-full max-w-md p-3 rounded-md text-black mx-auto"
-        />
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 relative">
+          <div className="relative w-full sm:w-96">
+            <input
+              type="text"
+              placeholder={`Search by name or area in ${selectedCity}`}
+              value={searchTerm}
+              onChange={(e) => handleInputChange(e.target.value)}
+              className="w-full p-3 rounded-md text-black"
+            />
+            {areaSuggestions.length > 0 && (
+              <ul className="absolute z-10 bg-gray-800 text-white border border-gray-600 mt-1 rounded w-full max-h-40 overflow-y-auto shadow">
+                {areaSuggestions.map((suggestion, index) => (
+                  <li
+                    key={index}
+                    onClick={() => {
+                      setSearchTerm(suggestion);
+                      setAreaSuggestions([]);
+                    }}
+                    className="px-3 py-2 hover:bg-gray-700 cursor-pointer text-sm"
+                  >
+                    {suggestion}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <button
+            onClick={handleSearch}
+            className="bg-blue-600 px-4 py-2 rounded hover:bg-blue-700 text-white"
+          >
+            Search
+          </button>
+        </div>
       </section>
 
       {/* Pubs Section */}
@@ -48,17 +116,14 @@ export default function HomePage({ user, setUser, selectedCity }) {
             style={{ gridTemplateRows: "repeat(2, 1fr)" }}
           >
             {pubs.slice(0, 12).map((pub, i) => (
-              <div
-                key={i}
-                className="w-72 bg-gray-800 p-4 rounded-xl shadow-xl"
-              >
+              <div key={i} className="w-72 bg-gray-800 p-4 rounded-xl shadow-xl">
                 <img
                   src={itemImage}
                   alt={pub.name}
                   className="w-full h-40 object-cover rounded-md mb-3"
                 />
                 <h4 className="text-xl font-bold mb-1">{pub.name}</h4>
-                <p className="text-gray-400 mb-1">{pub.location || pub.place}</p>
+                <p className="text-gray-400 mb-1">{pub.area || pub.location || pub.place}</p>
                 <p className="text-gray-400 mb-1">{pub.description}</p>
                 <div className="flex items-center space-x-2 text-sm text-gray-300 mb-1">
                   <span>
@@ -82,7 +147,6 @@ export default function HomePage({ user, setUser, selectedCity }) {
         </div>
       </section>
 
-
       {/* Restaurants Section */}
       <section className="mb-10 p-5">
         <h3 className="text-2xl font-semibold mb-4">Restaurants ({selectedCity})</h3>
@@ -99,7 +163,7 @@ export default function HomePage({ user, setUser, selectedCity }) {
                   className="w-full h-40 object-cover rounded-md mb-3"
                 />
                 <h4 className="text-xl font-bold mb-1">{res.name}</h4>
-                <p className="text-gray-400 mb-1">{res.location || res.place}</p>
+                <p className="text-gray-400 mb-1">{res.area || res.location || res.place}</p>
                 <p className="text-gray-400 mb-1">{res.description}</p>
                 <div className="flex items-center space-x-2 text-sm text-gray-300 mb-1">
                   <span>

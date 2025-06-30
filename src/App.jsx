@@ -8,6 +8,7 @@ import ClubDetails from "./components/ClubDetails";
 import BookingPage from "./components/BookingPage";
 import AuthPage from "./components/AuthPage";
 import NotFound from "./components/NotFound";
+import Search from "./components/Search.jsx";
 
 function App() {
   const [user, setUserState] = useState(null);
@@ -57,7 +58,7 @@ function App() {
               />
             }
           />
-          <Route path="/hello" element={<Hello />} />
+          <Route path="/search" element={<Search selectedCity={selectedCity} />} />
           <Route path="/booking" element={<BookingPage user={user} />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/details/:type/:city/:index" element={<ClubDetails />} />
