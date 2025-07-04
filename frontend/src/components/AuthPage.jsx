@@ -37,7 +37,7 @@ export default function AuthPage({ setUser }) {
     const firebaseUser = userCredential.user;
 
     // 🔁 Send data to your backend
-    const res = await fetch("http://localhost:5000/api/users", {
+    const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/users`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -47,9 +47,10 @@ export default function AuthPage({ setUser }) {
         age: form.age,
         gender: form.gender,
         city: form.city,
-        role: "user",
+        role: "user"
       }),
     });
+
 
     const data = await res.json();
 
