@@ -23,52 +23,53 @@ export default function AuthPage({ setUser }) {
 
   const navigate = useNavigate();
 
-  const handleAuth = async (e) => {
-    e.preventDefault();
-    if (!isLogin && parseInt(form.age) < 15) {
-      alert("Only users above 15 years are allowed.");
-      return;
+ const handleAuth = async (e) => {
+  e.preventDefault();
+
+  try {
+    let userCredential;
+    if (isLogin) {
+      userCredential = await signInWithEmailAndPassword(auth, form.email, form.password);
+    } else {
+      userCredential = await createUserWithEmailAndPassword(auth, form.email, form.password);
     }
 
-    try {
-      let userCredential;
-      if (isLogin) {
-        userCredential = await signInWithEmailAndPassword(
-          auth,
-          form.email,
-          form.password
-        );
-      } else {
-        userCredential = await createUserWithEmailAndPassword(
-          auth,
-          form.email,
-          form.password
-        );
-      }
+    const firebaseUser = userCredential.user;
 
-      const firebaseUser = userCredential.user;
-      const imageUrl =
-        form.gender === "male"
-          ? "https://i.pravatar.cc/150?img=12"
-          : "https://i.pravatar.cc/150?img=47";
-
-      const userObj = {
-        username: isLogin
-          ? firebaseUser.email.split("@")[0]
-          : form.username || firebaseUser.email.split("@")[0],
+    // 🔁 Send data to your backend
+    const res = await fetch("http://localhost:5000/api/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        uid: firebaseUser.uid,
+        name: form.firstName + " " + form.lastName,
         email: firebaseUser.email,
-        imageUrl,
-        city: form.city,
+        age: form.age,
         gender: form.gender,
-      };
+        city: form.city,
+        role: "user",
+      }),
+    });
 
-      setUser(userObj);
-      sessionStorage.setItem("raveoutUser", JSON.stringify(userObj));
-      navigate("/");
-    } catch (error) {
-      alert(error.message);
-    }
-  };
+    const data = await res.json();
+
+    const userObj = {
+      uid: firebaseUser.uid,
+      email: firebaseUser.email,
+      username: form.username || firebaseUser.email.split("@")[0],
+      city: form.city,
+      gender: form.gender,
+    };
+
+    setUser(userObj);
+    sessionStorage.setItem("raveoutUser", JSON.stringify(userObj));
+    navigate("/");
+
+  } catch (error) {
+    alert(error.message);
+  }
+};
+
 
   const handleGoogleLogin = async () => {
     try {
