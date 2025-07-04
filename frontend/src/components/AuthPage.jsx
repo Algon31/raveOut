@@ -72,25 +72,43 @@ export default function AuthPage({ setUser }) {
 };
 
 
-  const handleGoogleLogin = async () => {
-    try {
-      const result = await signInWithPopup(auth, googleProvider);
-      const user = result.user;
+const handleGoogleLogin = async () => {
+  try {
+    const result = await signInWithPopup(auth, googleProvider);
+    const user = result.user;
 
-      const userObj = {
-        username: user.displayName || user.email.split("@")[0],
+    const userObj = {
+      username: user.displayName || user.email.split("@")[0],
+      email: user.email,
+      imageUrl: user.photoURL,
+      city: "Mysuru",
+      gender: "unknown",
+    };
+
+    // ✅ Send to backend to store in MongoDB
+    await fetch(`${import.meta.env.VITE_API_BASE}/api/users`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        uid: user.uid,
+        name: user.displayName || user.email.split("@")[0],
         email: user.email,
-        imageUrl: user.photoURL,
+        age: 18,               // default age if not collected
+        gender: "unknown",     // or prompt later
         city: "Mysuru",
-        gender: "unknown",
-      };
+        role: "user",
+      }),
+    });
 
-      setUser(userObj);
-      navigate("/");
-    } catch (error) {
-      alert("Google login failed: " + error.message);
-    }
-  };
+    // ✅ Store in frontend
+    setUser(userObj);
+    sessionStorage.setItem("raveoutUser", JSON.stringify(userObj));
+    navigate("/");
+  } catch (error) {
+    alert("Google login failed: " + error.message);
+  }
+};
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
