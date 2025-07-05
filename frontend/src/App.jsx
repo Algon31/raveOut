@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import "./App.css";
 import HomePage from "./components/HomePage";
 import ClubDetails from "./components/ClubDetails";
 import BookingPage from "./components/BookingPage";
@@ -10,11 +9,19 @@ import NotFound from "./components/NotFound";
 import Search from "./components/Search.jsx";
 import Footer from "./components/Footer.jsx";
 
-function App() {
-  const [user, setUserState] = useState(null); // Logged-in user state
-  const [selectedCity, setSelectedCityState] = useState("Bengaluru"); // Default city
+import EditProfile from "./components/EditProfile";
+import ProfileInfo from "./ProfilePages/ProfileInfo";
+import Payments from "./ProfilePages/Payments";
+import Settings from "./ProfilePages/Settings";
+import Bookings from "./ProfilePages/Bookings";
+import Notifications from "./ProfilePages/Notifications";
 
-  // Load saved user and city from sessionStorage on initial load
+import "./App.css";
+
+function App() {
+  const [user, setUserState] = useState(null);
+  const [selectedCity, setSelectedCityState] = useState("Bengaluru");
+
   useEffect(() => {
     const storedUser = sessionStorage.getItem("raveoutUser");
     const storedCity = sessionStorage.getItem("raveoutCity");
@@ -23,7 +30,6 @@ function App() {
     if (storedCity) setSelectedCityState(storedCity);
   }, []);
 
-  // Setter for user that also saves to sessionStorage
   const setUser = (userData) => {
     if (userData) {
       sessionStorage.setItem("raveoutUser", JSON.stringify(userData));
@@ -33,7 +39,6 @@ function App() {
     setUserState(userData);
   };
 
-  // Setter for selected city that syncs with sessionStorage
   const setSelectedCity = (city) => {
     sessionStorage.setItem("raveoutCity", city);
     setSelectedCityState(city);
@@ -41,7 +46,6 @@ function App() {
 
   return (
     <>
-      {/* Navbar stays fixed on all pages */}
       <Navbar
         user={user}
         setUser={setUser}
@@ -49,10 +53,8 @@ function App() {
         setSelectedCity={setSelectedCity}
       />
 
-      {/* Route container (with top padding for fixed navbar) */}
       <div className="pt-16">
         <Routes>
-          {/* Home page */}
           <Route
             path="/"
             element={
@@ -64,26 +66,28 @@ function App() {
             }
           />
 
-          {/* Search results page */}
           <Route path="/search" element={<Search selectedCity={selectedCity} />} />
-
-          {/* Booking page (requires user) */}
           <Route path="/booking" element={<BookingPage user={user} />} />
-
-          {/* 404 fallback route */}
-          <Route path="*" element={<NotFound />} />
-
-          {/* Club/restaurant details page */}
           <Route path="/details/:type/:city/:index" element={<ClubDetails />} />
-
-          {/* Auth page: redirects to home if already logged in */}
           <Route
             path="/auth"
             element={!user ? <AuthPage setUser={setUser} /> : <Navigate to="/" />}
           />
+
+          {/* Profile routes inside EditProfile layout */}
+          <Route path="/profile" element={<EditProfile />}>
+            <Route path="profile" element={<ProfileInfo />} />
+            <Route path="payments" element={<Payments />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="bookings" element={<Bookings />} />
+            <Route path="notifications" element={<Notifications />} />
+          </Route>
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-      <Footer/>
+
+      <Footer />
     </>
   );
 }

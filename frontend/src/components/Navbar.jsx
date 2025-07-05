@@ -43,17 +43,15 @@ export default function Navbar({ user, setUser, selectedCity, setSelectedCity })
           </select>
 
           {!user ? (
-            <>
-              <NavLink
-                to="/auth"
-                className={({ isActive }) =>
-                  isActive ? "text-indigo-400 font-semibold" : "hover:text-indigo-300"
-                }
-                onClick={closeProfileMenu}
-              >
-                Login
-              </NavLink>
-            </>
+            <NavLink
+              to="/auth"
+              className={({ isActive }) =>
+                isActive ? "text-indigo-400 font-semibold" : "hover:text-indigo-300"
+              }
+              onClick={closeProfileMenu}
+            >
+              Login
+            </NavLink>
           ) : (
             <div className="relative">
               <img
@@ -73,13 +71,45 @@ export default function Navbar({ user, setUser, selectedCity, setSelectedCity })
                     className="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-indigo-500 object-cover"
                   />
                   <p className="font-semibold mb-2">{user.username}</p>
-                  <ul className="text-left space-y-2 cursor-pointer">
-                    <li className="hover:text-indigo-400">Edit Profile</li>
-                    <li className="hover:text-indigo-400">Settings</li>
-                    <li className="hover:text-indigo-400">Previous Bookings</li>
-                    <li className="hover:text-indigo-400">Notifications</li>
+                  <ul className="text-left space-y-2">
+                    <li>
+                      <NavLink
+                        to="/profile/profile"
+                        className="hover:text-indigo-400 block"
+                        onClick={closeProfileMenu}
+                      >
+                        Edit Profile
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/profile/settings"
+                        className="hover:text-indigo-400 block"
+                        onClick={closeProfileMenu}
+                      >
+                        Settings
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/profile/bookings"
+                        className="hover:text-indigo-400 block"
+                        onClick={closeProfileMenu}
+                      >
+                        Previous Bookings
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/profile/notifications"
+                        className="hover:text-indigo-400 block"
+                        onClick={closeProfileMenu}
+                      >
+                        Notifications
+                      </NavLink>
+                    </li>
                     <li
-                      className="hover:text-red-400 text-red-300"
+                      className="hover:text-red-400 text-red-300 cursor-pointer"
                       onClick={() => {
                         setUser(null);
                         sessionStorage.removeItem("raveoutUser");
@@ -94,6 +124,7 @@ export default function Navbar({ user, setUser, selectedCity, setSelectedCity })
             </div>
           )}
         </div>
+
       </div>
     </nav>
   );

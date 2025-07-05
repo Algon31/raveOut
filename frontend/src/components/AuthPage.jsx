@@ -23,93 +23,76 @@ export default function AuthPage({ setUser }) {
 
   const navigate = useNavigate();
 
- const handleAuth = async (e) => {
-  e.preventDefault();
+  const handleAuth = async (e) => {
+    e.preventDefault();
 
-  try {
-    let userCredential;
-    if (isLogin) {
-      userCredential = await signInWithEmailAndPassword(auth, form.email, form.password);
-    } else {
-      userCredential = await createUserWithEmailAndPassword(auth, form.email, form.password);
+    try {
+      let userCredential;
+      if (isLogin) {
+        userCredential = await signInWithEmailAndPassword(auth, form.email, form.password);
+      } else {
+        userCredential = await createUserWithEmailAndPassword(auth, form.email, form.password);
+      }
+
+      const firebaseUser = userCredential.user;
+
+      const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/users`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          uid: firebaseUser.uid,
+          name: form.firstName + " " + form.lastName,
+          email: firebaseUser.email,
+          age: form.age,
+          gender: form.gender,
+          city: form.city,
+          role: "user",
+        }),
+      });
+
+      const text = await res.text();
+      const data = JSON.parse(text);
+
+      const userObj = data.user;
+
+      setUser(userObj);
+      sessionStorage.setItem("raveoutUser", JSON.stringify(userObj));
+      navigate("/");
+    } catch (error) {
+      alert(error.message);
     }
+  };
 
-    const firebaseUser = userCredential.user;
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
 
-    // 🔁 Send data to your backend
-    const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/users`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        uid: firebaseUser.uid,
-        name: form.firstName + " " + form.lastName,
-        email: firebaseUser.email,
-        age: form.age,
-        gender: form.gender,
-        city: form.city,
-        role: "user"
-      }),
-    });
-    
-    const text = await res.text();
-    const data = JSON.parse(text);
+      const backendRes = await fetch(`${import.meta.env.VITE_API_BASE}/api/users`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          uid: user.uid,
+          name: user.displayName || user.email.split("@")[0],
+          email: user.email,
+          age: 18,
+          gender: "unknown",
+          city: "Mysuru",
+          role: "user",
+        }),
+      });
 
+      const backendData = await backendRes.json();
 
-    const userObj = {
-      uid: firebaseUser.uid,
-      email: firebaseUser.email,
-      username: form.username || firebaseUser.email.split("@")[0],
-      city: form.city,
-      gender: form.gender,
-    };
+      const userObj = backendData.user;
 
-    setUser(userObj);
-    sessionStorage.setItem("raveoutUser", JSON.stringify(userObj));
-    navigate("/");
-
-  } catch (error) {
-    alert(error.message);
-  }
-};
-
-
-const handleGoogleLogin = async () => {
-  try {
-    const result = await signInWithPopup(auth, googleProvider);
-    const user = result.user;
-
-    const userObj = {
-      username: user.displayName || user.email.split("@")[0],
-      email: user.email,
-      imageUrl: user.photoURL,
-      city: "Mysuru",
-      gender: "unknown",
-    };
-
-    // ✅ Send to backend to store in MongoDB
-    await fetch(`${import.meta.env.VITE_API_BASE}/api/users`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        uid: user.uid,
-        name: user.displayName || user.email.split("@")[0],
-        email: user.email,
-        age: 18,               // default age if not collected
-        gender: "unknown",     // or prompt later
-        city: "Mysuru",
-        role: "user",
-      }),
-    });
-
-    // ✅ Store in frontend
-    setUser(userObj);
-    sessionStorage.setItem("raveoutUser", JSON.stringify(userObj));
-    navigate("/");
-  } catch (error) {
-    alert("Google login failed: " + error.message);
-  }
-};
-
+      setUser(userObj);
+      sessionStorage.setItem("raveoutUser", JSON.stringify(userObj));
+      navigate("/");
+    } catch (error) {
+      alert("Google login failed: " + error.message);
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
