@@ -29,17 +29,34 @@ exports.signup = async (req, res) => {
 
 exports.login = async (req, res) => {
   try {
+    console.log("Login route hit");
+
     const { email, password } = req.body;
+    console.log("Email:", email);
 
     const user = await User.findOne({ email });
-    if (!user) return res.status(400).json({ error: "Invalid credentials" });
+    if (!user) {
+      console.log("User not found");
+      return res.status(400).json({ error: "Invalid credentials" });
+    }
 
     const match = await bcrypt.compare(password, user.password);
-    if (!match) return res.status(400).json({ error: "Invalid credentials" });
+    if (!match) {
+      console.log("Password mismatch");
+      return res.status(400).json({ error: "Invalid credentials" });
+    }
 
     const token = generateToken(user);
-    res.json({ user: { name: user.name, email: user.email, role: user.role }, token });
+    console.log("Login successful, sending response");
+
+    return res.status(200).json({
+      user: { name: user.name, email: user.email, role: user.role },
+      token,
+    });
   } catch (err) {
-    res.status(500).json({ error: "Login failed" });
+    console.error("Login error:", err);
+    return res.status(500).json({ error: "Login failed", message: err.message });
   }
 };
+
+

@@ -1,19 +1,28 @@
 const express = require("express");
-const User = require("../models/User");
 const router = express.Router();
+const User = require("../models/User");
 
 router.post("/", async (req, res) => {
-  const { uid, name, email, age, gender, city, role } = req.body;
+  console.log("🟢 /api/users route hit"); // should show up
 
   try {
-    const existing = await User.findOne({ uid });
-    if (existing) return res.status(200).json({ user: existing });
+    const { uid, name, email, age, gender, city, role } = req.body;
 
-    const newUser = await User.create({ uid, name, email, age, gender, city, role });
-    res.status(201).json({ user: newUser });
+    if (!email) {
+      return res.status(400).json({ success: false, message: "Email is required" });
+    }
+
+    let existing = await User.findOne({ email });
+    if (existing) {
+      return res.status(200).json({ success: true, message: "User already exists" });
+    }
+
+    const user = await User.create({ uid, name, email, age, gender, city, role });
+
+    return res.status(201).json({ success: true, message: "User created", user });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Failed to save user" });
+    console.error("MongoDB store error:", err);
+    return res.status(500).json({ success: false, message: "Server error" });
   }
 });
 

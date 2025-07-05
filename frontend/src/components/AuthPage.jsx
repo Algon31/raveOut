@@ -50,9 +50,10 @@ export default function AuthPage({ setUser }) {
         role: "user"
       }),
     });
+    
+    const text = await res.text();
+    const data = JSON.parse(text);
 
-
-    const data = await res.json();
 
     const userObj = {
       uid: firebaseUser.uid,
